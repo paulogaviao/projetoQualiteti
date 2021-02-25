@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>index</title>
+
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<link rel="stylesheet" href="resource/css/cadastro.css">
+</head>
+<body>
+	<div class="tabela">
+		<form action="salvarArquivo" method="post" id="myform"
+			onsubmit="return validarCampos() ? true : false">
+
+			<h1>Titulo da Seção</h1>
+
+			<h3>Titulo da Sub-Seção</h3>
+			<br />
+			
+
+				<label>Título 1</label> <br /> <input type="text" id="titulo1"
+					name="titulo1" autofocus="autofocus" placeholder="Titulo1"
+					maxlength="25" class="a">
+		
+
+			<br /> <br />
+			
+				<label>Título 2</label> <br /> <select name="titulo2"
+					onchange="funcao()">
+					<option value="">Escolha uma Opção</option>
+					<option value="opcao1">Opção 1</option>
+					<option value="opcao2">Opção 2</option>
+					<option value="opcao3">Opção 3</option>
+					<option value="opcao4">Opção 4</option>
+				</select>
+
+				<p id="op"></p>
+			
+			
+			 <input type="submit" value="Salvar" onclick="clicar()">
+			<br /><br/><br/>
+				 <a href="pages/listaArquivo.html"><img
+				alt="lista de Arquivos" src="resource/image/lista.png" width="45px"
+				height="40px" title="lista de Arquivos"></a>
+
+		</form>
+	</div>
+	<div id="lista"></div>
+</body>
+
+<script type="text/javascript">
+/*esta função tem por finalidade resgatar o valor do select e mostrar logo abaixo a opção escolhida*/
+	function funcao() {
+		var x = document.getElementById("titulo2").value;
+		document.getElementById("op").innerHTML = "Você escolheu: " + x;
+	}
+	/*Aqui inicia a captura de dados do formulario através do ajax*/
+	
+	function clicar() {
+
+		$.post("salvarArquivo", $("#myform").serialize());
+	}
+	/*esta função tem por finalidade validar os campos para que sejam todos escritos*/
+	function validarCampos() {
+		if (document.getElementById("titulo1").value == '') {
+			alert('Por favor informe o Titulo 1')
+			return false;
+		} else if (document.getElementById("titulo2").value == '') {
+			alert('por favor informe o Titulo 2')
+			return false;
+		}
+		return true
+	}
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript"
+	src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+<table id="minhalista" class="display" style="width: 100%">
+		<thead>
+			<tr>
+				<th>titulo 1</th>
+				<th>titulo 2</th>
+			</tr>
+		</thead>
+		  <tbody>
+          </tbody>
+   </table>
+</body>
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $('#minhalista').DataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": "salvarArquivo"
+    } );
+} );
+</script>
+</html>

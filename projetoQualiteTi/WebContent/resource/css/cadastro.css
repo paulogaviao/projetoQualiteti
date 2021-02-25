@@ -1,0 +1,51 @@
+@charset "ISO-8859-1";
+.tabela input:hover{
+	color: blue;
+}
+
+.tabela{
+	border-style:groove;
+	position: fixed;
+    width: 700px;
+    height: 450px;
+	text-align: center;
+	padding-left: 70px;
+	padding-top: 100px;
+	padding-right:70px;
+	margin-left: 260px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.tabela h1{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #EB356E;
+	border-radius: 20px;
+}
+.tabela h3{
+	margin-left:180px;
+	background-color: #F51A8D;
+	border-radius: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	height:25px;
+	width: 300px;
+	
+}
+
+.tabela input{
+	border-radius: 20px;
+	width:200px; 
+	height: 30px;
+	text-align: center;
+}
+.a:focus{
+	border-radius: 20px;
+}
+.tabela select{
+	border-radius: 20px;
+	width:200px; 
+	height: 30px;
+	text-align: center;
+	
+}
+
+
